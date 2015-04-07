@@ -12,10 +12,6 @@ class Imdb
   const TYPE_SERIES = 'series';
   const TYPE_EPISODE = 'episode';
 
-  private function __construct()
-  {
-  }
-
   /**
    * @param string $movie
    * @param string $type

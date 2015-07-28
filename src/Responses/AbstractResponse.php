@@ -1,7 +1,7 @@
 <?php
 namespace Jleagle\Imdb\Responses;
 
-class AbstractResponse
+abstract class AbstractResponse
 {
   public function __construct(array $data)
   {

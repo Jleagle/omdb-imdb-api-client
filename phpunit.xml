@@ -3,7 +3,6 @@
          bootstrap="vendor/autoload.php"
          colors="true"
          verbose="true"
-         strict="true"
          convertErrorsToExceptions="true"
          convertNoticesToExceptions="true"
          convertWarningsToExceptions="true"

@@ -1,7 +1,8 @@
 <?php
 namespace Jleagle\Imdb;
 
-use GuzzleHttp\Client;
+use Jleagle\CurlWrapper\Curl;
+use Jleagle\CurlWrapper\Exceptions\CurlException;
 use Jleagle\Imdb\Exceptions\ImdbException;
 use Jleagle\Imdb\Responses\Movie;
 use Jleagle\Imdb\Responses\Result;
@@ -110,7 +111,7 @@ class Imdb
    *
    * @return bool
    */
-  private static function isValidId($string)
+  protected static function isValidId($string)
   {
     return preg_match("/tt\\d{7}/", $string) > 0;
   }
@@ -122,17 +123,22 @@ class Imdb
    *
    * @throws ImdbException
    */
-  private static function _get($params)
+  protected static function _get($params)
   {
     $params = array_filter($params);
 
     $params['r'] = 'json';
     $params['v'] = '1';
 
-    $client = new Client();
-    $response = $client
-      ->get('http://www.omdbapi.com/', ['query' => $params])
-      ->json();
+    try
+    {
+      $response = Curl::get('http://www.omdbapi.com/', $params)
+        ->run()->getJson();
+    }
+    catch(CurlException $e)
+    {
+      throw new ImdbException($e->getResponse()->getErrorMessage());
+    }
 
     if(isset($response['Response']) && $response['Response'] == 'False')
     {

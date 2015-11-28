@@ -1,6 +1,6 @@
 {
-  "name":        "jleagle/omdb-imdb-api-client",
-  "keywords":    [
+  "name": "jleagle/omdb-imdb-api-client",
+  "keywords": [
     "imdb",
     "omdb",
     "api",
@@ -8,22 +8,22 @@
     "helper"
   ],
   "description": "A package to retrieve movies and TV information from IMDB using the API at omdbapi.com",
-  "license":     "MIT",
-  "authors":     [
+  "license": "MIT",
+  "authors": [
     {
-      "name":     "James Eagle",
-      "email":    "jimeagle@gmail.com",
+      "name": "James Eagle",
+      "email": "jimeagle@gmail.com",
       "homepage": "http://jimeagle.com"
     }
   ],
-  "require":     {
-    "php":               ">=5.4",
-    "guzzlehttp/guzzle": "~5.0"
+  "require": {
+    "php": ">=5.4",
+    "jleagle/curl-wrapper": "~0.1"
   },
   "require-dev": {
-    "phpunit/phpunit": "~4.6"
+    "phpunit/phpunit": "~5.0"
   },
-  "autoload":    {
+  "autoload": {
     "psr-4": {
       "Jleagle\\Imdb\\": "src/"
     }

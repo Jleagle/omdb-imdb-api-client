@@ -12,6 +12,13 @@ class Imdb
   const TYPE_MOVIE = 'movie';
   const TYPE_SERIES = 'series';
   const TYPE_EPISODE = 'episode';
+  
+  protected static $_apiKey;
+  
+  public static function setApiKey($apiKey)
+  {
+    self::$_apiKey = $apiKey;
+  }
 
   /**
    * @param string $movie
@@ -125,10 +132,16 @@ class Imdb
    */
   protected static function _get($params)
   {
+    if (!self::$_apiKey)
+    {
+      throw new ImdbException('OMDB now requires an API key');
+    }
+    
     $params = array_filter($params);
 
     $params['r'] = 'json';
     $params['v'] = '1';
+    $params['apikey'] = self::$_apiKey;
 
     try
     {

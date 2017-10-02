@@ -2,6 +2,12 @@
 
 A package to retrieve movies and TV information from IMDB using the API at omdbapi.com
 
+Now that OMDB requires an API key you can set it using:
+
+```php
+Imdb::setApiKey('xxx');
+```
+
 Retrieve full movie details, if you know the name or ID of the movie:
 
 ```php

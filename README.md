@@ -1,6 +1,6 @@
 # omdb-imdb-api-client
 
-A package to retrieve movies and TV information from IMDB using the API at omdbapi.com
+A package to retrieve movies and TV information from IMDB using the API at omdbapi.com with typed responses
 
 Now that OMDB requires an API key you can set it using:
 

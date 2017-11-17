@@ -7,4 +7,5 @@ class Result extends AbstractResponse
   public $year;
   public $imdbId;
   public $movieType;
+  public $poster;
 }

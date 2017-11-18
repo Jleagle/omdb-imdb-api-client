@@ -106,7 +106,8 @@ class Imdb
           'title'     => $result['Title'],
           'year'      => $result['Year'],
           'imdbId'    => $result['imdbID'],
-          'movieType' => $result['Type']
+          'movieType' => $result['Type'],
+          'poster'    => $result['Poster'],
         ]
       );
     }
